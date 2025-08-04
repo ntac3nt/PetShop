@@ -73,3 +73,18 @@ javac -d bin src/models/*.java src/controller/*.java
 
 # Run the main GUI
 java -cp bin controller.FrPetShop
+
+
+### 🖼️ Screenshots
+
+**Main Window**
+
+![Main](images/ps1.png)
+
+**Display Pet Form**
+
+![Display](images/ps2.png)
+
+**Search Result**
+
+![Search](images/ps3.png)
