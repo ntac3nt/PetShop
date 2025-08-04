@@ -1,33 +1,35 @@
-# 🐾 Pet Shop Management App
+# 🐾 Pet Shop Management Application
 
-> Bài tập lớn môn Lập trình Hướng đối tượng (OOP) - Java Swing
-
----
-
-## 📌 Giới thiệu
-
-Ứng dụng quản lý thú cưng được xây dựng bằng Java và thư viện giao diện Swing. Ứng dụng cho phép người dùng thực hiện các chức năng cơ bản để quản lý thông tin các loại thú cưng như **Chó**, **Mèo**, **Hamster**, bao gồm:
-
-- Thêm thú cưng
-- Hiển thị danh sách
-- Tìm kiếm theo tên hoặc ID
-- Sửa thông tin thú cưng
-- Xóa thú cưng
-- Lưu / đọc dữ liệu từ file
-- [Có thể mở rộng thêm: đăng nhập, phân quyền, thống kê,...]
+> Final Project for Object-Oriented Programming Course - Java Swing GUI
 
 ---
 
-## 🧰 Công nghệ sử dụng
+## 📌 Introduction
 
-- Java 8+
-- Swing GUI
-- OOP Design (Lớp cha `Pet`, lớp con `Cat`, `Dog`, `Hamster`)
-- Serialization (`ObjectOutputStream` / `ObjectInputStream`)
+This is a desktop application developed using Java Swing to manage pets in a pet shop. The application supports basic CRUD functionalities, allowing users to:
+
+- Add new pets
+- Display all pets
+- Search pets by ID or name
+- Edit pet information
+- Delete pets
+- Save and load pet data from file
+- *(Optional: login, statistics, reports, etc.)*
 
 ---
 
-## 📁 Cấu trúc thư mục
+## 🧰 Technologies Used
+
+- Java 8 or later
+- Java Swing (GUI)
+- Object-Oriented Programming (Inheritance, Polymorphism)
+- Java Serialization (`ObjectOutputStream` / `ObjectInputStream`)
+
+---
+
+## 📁 Project Structure
+
+
 
 ```plaintext
 petshop/
@@ -47,3 +49,27 @@ petshop/
 ├── pets.dat                 // File lưu dữ liệu nhị phân
 ├── README.md
 └── ...
+
+## 🚀 How to Run the Application
+
+### ✅ Option 1: Using an IDE (recommended)
+
+1. Open the project in **NetBeans**, **IntelliJ IDEA**, or any Java IDE.
+2. Locate and run the file: `FrPetShop.java` inside the `controller` package.
+3. The main window will appear. You can now:
+   - Add new pets
+   - Save or load data from `pets.dat`
+   - Search, edit, or delete pets
+   - View pet list in a table
+
+### ✅ Option 2: Compile and run from terminal
+
+```bash
+# Navigate to project directory
+cd petshop
+
+# Compile all classes (adjust if needed)
+javac -d bin src/models/*.java src/controller/*.java
+
+# Run the main GUI
+java -cp bin controller.FrPetShop
