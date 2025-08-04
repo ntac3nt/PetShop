@@ -79,12 +79,12 @@ java -cp bin controller.FrPetShop
 
 **Main Window**
 
-![Main](https://github.com/ntac3nt/PetShop/blob/main/images/ps1.png)
+![Main](images/ps1.png)
 
 **Display Pet Form**
 
-![Display](https://github.com/ntac3nt/PetShop/blob/main/images/ps2.png)
+![Display](images/ps2.png)
 
 **Search Result**
 
-![Search](https://github.com/ntac3nt/PetShop/blob/main/images/ps3.png)
+![Search](images/ps3.png)
