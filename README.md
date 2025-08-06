@@ -55,7 +55,7 @@ petshop/
 ### ✅ Option 1: Using an IDE (recommended)
 
 1. Open the project in **NetBeans**, **IntelliJ IDEA**, or any Java IDE.
-2. Locate and run the file: `FrPetShop.java` inside the `controller` package.
+2. Locate and run the file: `FrPetShop.java`
 3. The main window will appear. You can now:
    - Add new pets
    - Save or load data from `pets.dat`
