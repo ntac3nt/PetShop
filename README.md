@@ -70,6 +70,7 @@ cd petshop
 
 # Compile all classes (adjust if needed)
 javac -d bin src/models/*.java src/controller/*.java
+You enter the account:`admin` and the passwordzz: `123`
 
 # Run the main GUI
 java -cp bin controller.FrPetShop
