@@ -1,7 +1,7 @@
 package petshop;
 
 //import javax.swing.JFrame;
-import controller.FrPetShop;
+import controller.login;
 import petshop.models.Dog;
 import petshop.models.Pet;
 
@@ -13,7 +13,7 @@ public class PetShop {
 
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(() -> {
-            new FrPetShop().setVisible(true);
+            new login().setVisible(true);
         });
     }
 }

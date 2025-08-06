@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javax.print.attribute.standard.JobMessageFromOperator;
 import javax.swing.table.DefaultTableModel;
@@ -269,6 +271,29 @@ public class FrPetShop extends javax.swing.JFrame {
 
     private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
 
+        // sort
+        Collections.sort(petList, new Comparator<Pet>() {
+            @Override
+            public int compare(Pet p1, Pet p2) {
+                String name1 = getPetName(p1);
+                String name2 = getPetName(p2);
+                return name1.compareToIgnoreCase(name2);
+            }
+
+            private String getPetName(Pet p) {
+                if (p instanceof Dog) {
+                    return ((Dog) p).getName();
+                }
+                if (p instanceof Cat) {
+                    return ((Cat) p).getName();
+                }
+                if (p instanceof Hamster) {
+                    return "Không có tên";
+                }
+                return "";
+            }
+        });
+        //
         model.setRowCount(0);
         for (Pet p : petList) {
             if (p instanceof Dog) {
