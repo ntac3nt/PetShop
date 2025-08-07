@@ -4,7 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/PetShop/src/petshop/PetShop.java</file>
-            <file>file:/D:/PetShop/src/controller/login.java</file>
+            <file>file:/D:/PetShop/src/controller/FindInfo.java</file>
+            <file>file:/D:/PetShop/src/controller/FrPetShop.java</file>
+            <file>file:/D:/PetShop/src/petshop/models/Pet.java</file>
+            <file>file:/D:/PetShop/src/petshop/models/Hamster.java</file>
+            <file>file:/D:/PetShop/src/petshop/models/Dog.java</file>
+            <file>file:/D:/PetShop/src/petshop/models/Cat.java</file>
         </group>
     </open-files>
 </project-private>

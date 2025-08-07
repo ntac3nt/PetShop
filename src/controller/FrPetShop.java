@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -42,18 +43,12 @@ public class FrPetShop extends javax.swing.JFrame {
         setTitle("Quản Lí Thú Cưng");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        String[] petTypes = {"Cat", "Dog", "Hamster"};
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("pettype.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (!line.trim().isEmpty()) {
-                    choose.addItem(line.trim());
-                }
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Không thể đọc file pettype.txt", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
+        for (String type : petTypes) {
+            choose.addItem(type);
         }
+        
     }
 
     /**
@@ -413,7 +408,7 @@ public class FrPetShop extends javax.swing.JFrame {
 
     private void readfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readfileActionPerformed
         // TODO add your handling code here:
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("pets.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(System.getProperty("user.dir") + File.separator + "pet.dat"))) {
             List<Pet> loadPet = (List<Pet>) ois.readObject();
             for (Pet p : loadPet) {
                 boolean exists = false;
@@ -430,17 +425,19 @@ public class FrPetShop extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Đọc file thành công ");
         } catch (IOException | ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(this, "Lỗi khi đọc file", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Lỗi khi lưu file: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }//GEN-LAST:event_readfileActionPerformed
 
     private void savefileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savefileActionPerformed
         // TODO add your handling code here:
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("pets.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(System.getProperty("user.dir") + File.separator + "pet.dat"))) {
             oos.writeObject(petList);
             JOptionPane.showMessageDialog(this, "Đã lưu dữ liệu thành công ");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Lỗi khi lưu file", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Lỗi khi lưu file: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }//GEN-LAST:event_savefileActionPerformed
 
